@@ -156,7 +156,7 @@
   <action name="actionDisconnect">
    <property name="icon">
     <iconset resource="pictures.qrc">
-     <normaloff>:/Icons/Stop playing.png</normaloff>:/Icons/Stop playing.png</iconset>
+     <normaloff>:/Icons/Stop.png</normaloff>:/Icons/Stop.png</iconset>
    </property>
    <property name="text">
     <string>Disconnect</string>
