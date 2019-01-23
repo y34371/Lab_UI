@@ -23,7 +23,7 @@ public:
     void closeSerialPort();
     void settingSerialPort();
 
-    void sendCmd(quint16 cmd, quint16 arg_1, float arg_2, float arg_3);
+    void sendCmd(quint16 cmd, qint16 arg_1, float arg_2, float arg_3);
 
 
     bool getFloat(float *,quint16 index);
@@ -52,7 +52,7 @@ private:
         quint16 cmd_word;
         float arg_2;
         float arg_3;
-        quint16 arg_1;
+        qint16 arg_1;
         quint16 checksum;
     };
     union CmdAssembly

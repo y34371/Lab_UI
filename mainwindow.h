@@ -28,11 +28,12 @@ private slots:
 
     void updateAllPlot();
 
-    void on_pushButton_clicked();
+    void on_buttonDabOn_clicked();
 
-    void on_pushButton_2_clicked();
+    void on_buttonDabOff_clicked();
 
-    void on_pushButton_3_clicked();
+    void on_buttonPhsSet_clicked();
+    void wheelEvent(QWheelEvent *event);
 
 private:
     Ui::MainWindow *ui;

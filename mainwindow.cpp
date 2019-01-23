@@ -41,6 +41,11 @@ void MainWindow::getDataFromPacket()
     for(quint16 i=0;i<4;i++)
         serial->getFloat(payload_float+i,i);
 
+    QString dab_prd_read = QString::number(payload_int16[0],10);
+    QString dab_phs_read = QString::number(payload_int16[1],10);
+    ui->lineEditPrdRead->setText(dab_prd_read);
+    ui->lineEditPhsRead->setText(dab_phs_read);
+
     ui->xyPlot_Ch1->receiveData(qreal(tik_count),qreal(payload_float[0]));
     ui->xyPlot_Ch2->receiveData(qreal(tik_count),qreal(payload_float[1]));
     ui->xyPlot_Ch3->receiveData(qreal(tik_count),qreal(payload_float[2]));
@@ -79,19 +84,45 @@ void MainWindow::updateAllPlot()
     ui->xyPlot_Ch4->updatePlot();
 }
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_buttonDabOn_clicked()
 {
-    tik_count++;
-    ui->lcdNumber->display(tik_count);
+    serial->sendCmd(DAB_PRI_EN,0,0,0);
 }
 
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::on_buttonDabOff_clicked()
 {
-    tik_count--;
-    ui->lcdNumber->display(tik_count);
+    serial->sendCmd(DAB_PRI_DIS,0,0,0);
 }
 
-void MainWindow::on_pushButton_3_clicked()
+void MainWindow::on_buttonPhsSet_clicked()
 {
-    serial->sendCmd(PWM_DIS,0,0,0);
+    qint16 phs = qint16(ui->lineEditPhsSet->text().toInt());
+    serial->sendCmd(DAB_PHS_SET,phs,0,0);
+}
+
+void MainWindow::wheelEvent(QWheelEvent *event)
+{
+    int y;
+//    x = event->angleDelta().x();
+    y = event->angleDelta().y();
+
+    if(ui->labelFreqArea->underMouse())
+    {
+        if(y>0)
+//            qDebug() << "freq_inc";
+            serial->sendCmd(DAB_FREQ_INC,0,0,0);
+        else
+//            qDebug() << "freq_dec";
+            serial->sendCmd(DAB_FREQ_DEC,0,0,0);
+    }
+
+    if(ui->labelPhaseArea->underMouse())
+    {
+        if(y>0)
+//            qDebug() << "phase_inc";
+            serial->sendCmd(DAB_PHS_INC,0,0,0);
+        else
+//            qDebug() << "phase_dec";
+            serial->sendCmd(DAB_PHS_DEC,0,0,0);
+    }
 }

@@ -45,7 +45,7 @@ void SerialPort::settingSerialPort()
     settings->show();
 }
 
-void SerialPort::sendCmd(quint16 cmd, quint16 arg_1, float arg_2, float arg_3)
+void SerialPort::sendCmd(quint16 cmd, qint16 arg_1, float arg_2, float arg_3)
 {
     cmd_assembly.packet.cmd_word = cmd;
     cmd_assembly.packet.arg_1 = arg_1;
