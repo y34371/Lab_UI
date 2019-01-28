@@ -52,7 +52,7 @@ void MainWindow::getDataFromPacket()
     ui->xyPlot_Ch4->receiveData(qreal(tik_count),qreal(payload_float[3]));
     tik_count++;
 
-    qDebug() << payload_float[0] << payload_float[1] << payload_float[2] << payload_float[3];
+//    qDebug() << payload_float[0] << payload_float[1] << payload_float[2] << payload_float[3];
 }
 
 void MainWindow::on_actionConnect_triggered()
