@@ -28,11 +28,13 @@ private slots:
 
     void updateAllPlot();
 
-    void on_pushButton_clicked();
+    void on_buttonMainClose_clicked();
 
-    void on_pushButton_2_clicked();
+    void on_buttoMainOpen_clicked();
 
-    void on_pushButton_3_clicked();
+    void on_buttonSsrClose_clicked();
+
+    void on_buttonSsrOpen_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -47,7 +47,7 @@ void MainWindow::getDataFromPacket()
     ui->xyPlot_Ch4->receiveData(qreal(tik_count),qreal(payload_float[3]));
     tik_count++;
 
-    qDebug() << payload_float[0] << payload_float[1] << payload_float[2] << payload_float[3];
+//    qDebug() << payload_float[0] << payload_float[1] << payload_float[2] << payload_float[3];
 }
 
 void MainWindow::on_actionConnect_triggered()
@@ -79,19 +79,23 @@ void MainWindow::updateAllPlot()
     ui->xyPlot_Ch4->updatePlot();
 }
 
-void MainWindow::on_pushButton_clicked()
+
+void MainWindow::on_buttonMainClose_clicked()
 {
-    tik_count++;
-    ui->lcdNumber->display(tik_count);
+    serial->sendCmd(RELAY_1_CLOSE,0,0,0);
 }
 
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::on_buttoMainOpen_clicked()
 {
-    tik_count--;
-    ui->lcdNumber->display(tik_count);
+    serial->sendCmd(RELAY_1_OPEN,0,0,0);
 }
 
-void MainWindow::on_pushButton_3_clicked()
+void MainWindow::on_buttonSsrClose_clicked()
 {
-    serial->sendCmd(PWM_DIS,0,0,0);
+    serial->sendCmd(RELAY_2_CLOSE,0,0,0);
+}
+
+void MainWindow::on_buttonSsrOpen_clicked()
+{
+    serial->sendCmd(RELAY_2_OPEN,0,0,0);
 }

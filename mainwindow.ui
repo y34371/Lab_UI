@@ -14,16 +14,6 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLCDNumber" name="lcdNumber">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>20</y>
-      <width>211</width>
-      <height>91</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
@@ -64,49 +54,13 @@
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>20</y>
-      <width>101</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>LCD Inc</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>70</y>
-      <width>101</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>LCD Dec</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="buttonMainClose">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>140</y>
-      <width>331</width>
-      <height>81</height>
+      <y>10</y>
+      <width>161</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -115,7 +69,61 @@
      </font>
     </property>
     <property name="text">
-     <string>Send Command &quot;PWM_OFF&quot;</string>
+     <string>Main Breaker Close</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="buttonSsrClose">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>SS Resistor Close</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="buttoMainOpen">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>10</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Main Breaker Open</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="buttonSsrOpen">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>60</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>SS Resistor Open</string>
     </property>
    </widget>
   </widget>
