@@ -36,6 +36,20 @@ private slots:
 
     void on_buttonSsrOpen_clicked();
 
+    void on_buttonLoadClose_clicked();
+
+    void on_buttonLoadOpen_clicked();
+
+    void on_buttonFaultDetEn_clicked();
+
+    void on_buttonFaultDetDis_clicked();
+
+    void on_buttonTrigger_clicked();
+
+    void on_buttonChbOn_clicked();
+
+    void on_buttonChbOff_clicked();
+
 private:
     Ui::MainWindow *ui;
     SerialPort *serial;

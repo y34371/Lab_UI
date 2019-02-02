@@ -19,10 +19,20 @@
 #define I_LOOP_PR       0x40
 #define I_OFFSET        0x41
 
+#define FAULT_DET_EN    0x60
+#define FAULT_DET_DIS   0x61
 
 #define RELAY_1_CLOSE   0x70
 #define RELAY_1_OPEN    0x71
 #define RELAY_2_CLOSE   0x72
 #define RELAY_2_OPEN    0x73
+#define LOAD_CLOSE      0x74
+#define LOAD_OPEN       0x75
+
+#define TRIGGER         0x78
+
+
+#define CHB_ON          0x7A
+#define CHB_OFF         0x7B
 
 #endif // CMDLIST_H

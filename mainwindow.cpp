@@ -47,7 +47,12 @@ void MainWindow::getDataFromPacket()
     ui->xyPlot_Ch4->receiveData(qreal(tik_count),qreal(payload_float[3]));
     tik_count++;
 
-//    qDebug() << payload_float[0] << payload_float[1] << payload_float[2] << payload_float[3];
+    ui->editFpgaStatus->setText(QString::number(payload_int16[0]));
+    ui->editFaultValue->setText(QString::number(payload_int16[1]));
+    ui->editChbState->setText(QString::number(payload_int16[2]));
+    ui->editFaultPrepare->setText(QString::number(payload_int16[3]));
+
+//    qDebug() << payload_int16[0] << payload_int16[1] << payload_int16[2] << payload_int16[3];
 }
 
 void MainWindow::on_actionConnect_triggered()
@@ -98,4 +103,39 @@ void MainWindow::on_buttonSsrClose_clicked()
 void MainWindow::on_buttonSsrOpen_clicked()
 {
     serial->sendCmd(RELAY_2_OPEN,0,0,0);
+}
+
+void MainWindow::on_buttonLoadClose_clicked()
+{
+    serial->sendCmd(LOAD_CLOSE,0,0,0);
+}
+
+void MainWindow::on_buttonLoadOpen_clicked()
+{
+    serial->sendCmd(LOAD_OPEN,0,0,0);
+}
+
+void MainWindow::on_buttonFaultDetEn_clicked()
+{
+    serial->sendCmd(FAULT_DET_EN,0,0,0);
+}
+
+void MainWindow::on_buttonFaultDetDis_clicked()
+{
+    serial->sendCmd(FAULT_DET_DIS,0,0,0);
+}
+
+void MainWindow::on_buttonTrigger_clicked()
+{
+    serial->sendCmd(TRIGGER,0,0,0);
+}
+
+void MainWindow::on_buttonChbOn_clicked()
+{
+    serial->sendCmd(CHB_ON,0,0,0);
+}
+
+void MainWindow::on_buttonChbOff_clicked()
+{
+    serial->sendCmd(CHB_OFF,0,0,0);
 }
