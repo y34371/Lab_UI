@@ -35,4 +35,5 @@
 #define CHB_ON          0x7A
 #define CHB_OFF         0x7B
 
+#define REAC_SET        0x80
 #endif // CMDLIST_H

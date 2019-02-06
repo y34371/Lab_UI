@@ -20,6 +20,14 @@ MainWindow::MainWindow(QWidget *parent) :
     plot_update_timer->start(200);
 
     tik_count = 0;
+
+    ////// For Sunlamp
+    watcher = new QFileSystemWatcher(this);
+    connect(watcher,SIGNAL(fileChanged(QString)),this,SLOT(dataFileChanged()));
+//    watcher->addPath("C:/Users/y3437/Google Drive/QtTest/test.txt");
+    watcher->addPath("C:/Users/y3437/Google Drive/QtTest/SUNLAMP/dis_pv.csv");
+
+    //////
 }
 
 MainWindow::~MainWindow()
@@ -41,10 +49,10 @@ void MainWindow::getDataFromPacket()
     for(quint16 i=0;i<4;i++)
         serial->getFloat(payload_float+i,i);
 
-    ui->xyPlot_Ch1->receiveData(qreal(tik_count),qreal(payload_int16[0]));
-    ui->xyPlot_Ch2->receiveData(qreal(tik_count),qreal(payload_int16[2]));
-    ui->xyPlot_Ch3->receiveData(qreal(tik_count),qreal(payload_int16[3]));
-    ui->xyPlot_Ch4->receiveData(qreal(tik_count),qreal(payload_int16[4]));
+    ui->xyPlot_Ch1->receiveData(qreal(tik_count),qreal(payload_float[0]));
+    ui->xyPlot_Ch2->receiveData(qreal(tik_count),qreal(payload_float[1]));
+    ui->xyPlot_Ch3->receiveData(qreal(tik_count),qreal(payload_float[2]));
+    ui->xyPlot_Ch4->receiveData(qreal(tik_count),qreal(payload_float[3]));
     tik_count++;
 
     ui->editFpgaStatus->setText(QString::number(payload_int16[0]));
@@ -138,4 +146,40 @@ void MainWindow::on_buttonChbOn_clicked()
 void MainWindow::on_buttonChbOff_clicked()
 {
     serial->sendCmd(CHB_OFF,0,0,0);
+}
+
+void MainWindow::dataFileChanged()
+{
+    QStringList files = watcher->files();
+    QString filename = files[0];
+//    qDebug() << filename;
+    QFile datafile(filename);
+    if (!datafile.open(QIODevice::ReadOnly | QIODevice::Text))
+        return;
+    QByteArray line = datafile.readLine();
+    qDebug() << line;
+    datafile.close();
+
+    int length = line.length();
+    int state = 0;
+    QString reac_received;
+    for(int index=0;index<length;index++)
+    {
+        if(line[index] == ',')
+            state++;
+        else if(state == 1)
+            reac_received += line[index];
+        else{}
+    }
+    qDebug() << reac_received;
+    float Iq_ref = 5 * reac_received.toFloat();
+    serial->sendCmd(REAC_SET,0,Iq_ref,0);
+}
+
+
+void MainWindow::on_buttonReactiveSet_clicked()
+{
+    QString reac_current_read = ui->editReactiveSet->text();
+    float reac_current = reac_current_read.toFloat();
+    serial->sendCmd(REAC_SET,0,reac_current,0);
 }

@@ -314,7 +314,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>550</y>
+      <y>480</y>
       <width>161</width>
       <height>41</height>
      </rect>
@@ -362,6 +362,34 @@
     </property>
     <property name="text">
      <string>CHB Off</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="buttonReactiveSet">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>540</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Reactive Set</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="editReactiveSet">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>540</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
     </property>
    </widget>
   </widget>

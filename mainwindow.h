@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QFileSystemWatcher>
 #include "serialport.h"
 
 namespace Ui {
@@ -50,10 +51,16 @@ private slots:
 
     void on_buttonChbOff_clicked();
 
+    void dataFileChanged();
+
+    void on_buttonReactiveSet_clicked();
+
 private:
     Ui::MainWindow *ui;
     SerialPort *serial;
     QTimer *plot_update_timer;
+
+    QFileSystemWatcher * watcher;
 
     int tik_count;
 };
