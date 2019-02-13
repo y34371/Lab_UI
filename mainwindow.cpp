@@ -41,10 +41,10 @@ void MainWindow::getDataFromPacket()
     for(quint16 i=0;i<4;i++)
         serial->getFloat(payload_float+i,i);
 
-    ui->xyPlot_Ch1->receiveData(qreal(tik_count),qreal(payload_int16[0]));
-    ui->xyPlot_Ch2->receiveData(qreal(tik_count),qreal(payload_int16[2]));
-    ui->xyPlot_Ch3->receiveData(qreal(tik_count),qreal(payload_int16[3]));
-    ui->xyPlot_Ch4->receiveData(qreal(tik_count),qreal(payload_int16[4]));
+    ui->xyPlot_Ch1->receiveData(qreal(tik_count),qreal(qint16(payload_int16[4])));
+    ui->xyPlot_Ch2->receiveData(qreal(tik_count),qreal(payload_float[1]));
+    ui->xyPlot_Ch3->receiveData(qreal(tik_count),qreal(payload_float[2]));
+    ui->xyPlot_Ch4->receiveData(qreal(tik_count),qreal(payload_float[3]));
     tik_count++;
 
     ui->editFpgaStatus->setText(QString::number(payload_int16[0]));
