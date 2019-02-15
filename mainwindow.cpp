@@ -126,3 +126,13 @@ void MainWindow::wheelEvent(QWheelEvent *event)
             serial->sendCmd(DAB_PHS_DEC,0,0,0);
     }
 }
+
+void MainWindow::on_buttonRelayClose_clicked()
+{
+    serial->sendCmd(RELAY_1_CLOSE,0,0,0);
+}
+
+void MainWindow::on_buttonRelayOpen_clicked()
+{
+    serial->sendCmd(RELAY_1_OPEN,0,0,0);
+}

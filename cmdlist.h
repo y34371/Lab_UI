@@ -19,4 +19,7 @@
 #define I_LOOP_PR       0x40
 #define I_OFFSET        0x41
 
+#define RELAY_1_CLOSE   0x70
+#define RELAY_1_OPEN    0x71
+
 #endif // CMDLIST_H

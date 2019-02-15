@@ -35,6 +35,10 @@ private slots:
     void on_buttonPhsSet_clicked();
     void wheelEvent(QWheelEvent *event);
 
+    void on_buttonRelayClose_clicked();
+
+    void on_buttonRelayOpen_clicked();
+
 private:
     Ui::MainWindow *ui;
     SerialPort *serial;
