@@ -56,9 +56,9 @@ void MainWindow::getDataFromPacket()
     tik_count++;
 
     ui->editFpgaStatus->setText(QString::number(payload_int16[0]));
-    ui->editFaultValue->setText(QString::number(payload_int16[1]));
-    ui->editChbState->setText(QString::number(payload_int16[2]));
-    ui->editFaultPrepare->setText(QString::number(payload_int16[3]));
+//    ui->editFaultValue->setText(QString::number(payload_int16[1]));
+//    ui->editChbState->setText(QString::number(payload_int16[2]));
+//    ui->editFaultPrepare->setText(QString::number(payload_int16[3]));
 
 //    qDebug() << payload_int16[0] << payload_int16[1] << payload_int16[2] << payload_int16[3] << payload_int16[4];
 }
@@ -140,12 +140,12 @@ void MainWindow::on_buttonTrigger_clicked()
 
 void MainWindow::on_buttonChbOn_clicked()
 {
-    serial->sendCmd(CHB_ON,0,0,0);
+    serial->sendCmd(RECT_ON,0,0,0);
 }
 
 void MainWindow::on_buttonChbOff_clicked()
 {
-    serial->sendCmd(CHB_OFF,0,0,0);
+    serial->sendCmd(RECT_OFF,0,0,0);
 }
 
 void MainWindow::dataFileChanged()

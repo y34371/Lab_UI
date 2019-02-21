@@ -54,286 +54,12 @@
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="buttonMainClose">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>161</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Main Breaker Close</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="buttonSsrClose">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>60</y>
-      <width>161</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>SS Resistor Close</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="buttoMainOpen">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>10</y>
-      <width>161</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Main Breaker Open</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="buttonSsrOpen">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>60</y>
-      <width>161</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>SS Resistor Open</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="buttonLoadClose">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>140</y>
-      <width>161</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Load Close</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="buttonLoadOpen">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>140</y>
-      <width>161</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Load Open</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="buttonFaultDetEn">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>240</y>
-      <width>161</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Fault Det En</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="buttonFaultDetDis">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>240</y>
-      <width>161</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Fault Det Dis</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="editFpgaStatus">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>320</y>
-      <width>201</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="editFaultValue">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>360</y>
-      <width>201</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="editChbState">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>400</y>
-      <width>201</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="editFaultPrepare">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>440</y>
-      <width>201</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>320</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>FPGA Status:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>360</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Fault Value:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>400</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>CHB State:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>440</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Fault prepare:</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="buttonTrigger">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>480</y>
-      <width>161</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Trigger</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="buttonChbOn">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>640</y>
-      <width>161</width>
+      <y>10</y>
+      <width>191</width>
       <height>41</height>
      </rect>
     </property>
@@ -343,15 +69,15 @@
      </font>
     </property>
     <property name="text">
-     <string>CHB On</string>
+     <string>Rectifier On</string>
     </property>
    </widget>
    <widget class="QPushButton" name="buttonChbOff">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>640</y>
-      <width>161</width>
+      <x>210</x>
+      <y>10</y>
+      <width>191</width>
       <height>41</height>
      </rect>
     </property>
@@ -361,15 +87,15 @@
      </font>
     </property>
     <property name="text">
-     <string>CHB Off</string>
+     <string>Rectifier Off</string>
     </property>
    </widget>
    <widget class="QPushButton" name="buttonReactiveSet">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>540</y>
-      <width>121</width>
+      <y>110</y>
+      <width>191</width>
       <height>31</height>
      </rect>
     </property>
@@ -379,15 +105,25 @@
      </font>
     </property>
     <property name="text">
-     <string>Reactive Set</string>
+     <string>Reactive Power Set</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="editReactiveSet">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>540</y>
-      <width>201</width>
+      <x>210</x>
+      <y>110</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="editFpgaStatus">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>191</width>
       <height>31</height>
      </rect>
     </property>
